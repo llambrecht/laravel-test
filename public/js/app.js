@@ -5319,6 +5319,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
@@ -5326,7 +5332,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      'name': 'Louis'
+      'name': 'Louis',
+      'checkbox': true
     };
   }
 });
@@ -28158,7 +28165,70 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    Bonjour " + _vm._s(_vm.name) + " ! \n")])
+  return _c("div", [
+    _c("p", [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.name,
+            expression: "name",
+          },
+        ],
+        attrs: { type: "text" },
+        domProps: { value: _vm.name },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.name = $event.target.value
+          },
+        },
+      }),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.checkbox,
+            expression: "checkbox",
+          },
+        ],
+        attrs: { type: "checkbox" },
+        domProps: {
+          checked: Array.isArray(_vm.checkbox)
+            ? _vm._i(_vm.checkbox, null) > -1
+            : _vm.checkbox,
+        },
+        on: {
+          change: function ($event) {
+            var $$a = _vm.checkbox,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  (_vm.checkbox = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+              }
+            } else {
+              _vm.checkbox = $$c
+            }
+          },
+        },
+      }),
+    ]),
+    _vm._v("\n    Bonjour " + _vm._s(_vm.name) + " ! \n    "),
+    _vm.checkbox
+      ? _c("p", [_vm._v(" Vue is awesome ! ")])
+      : _c("p", [_vm._v(" Else statement")]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
