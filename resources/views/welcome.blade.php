@@ -12,7 +12,7 @@
     </head>
     <body class="antialiased">
         <div id="app">
-            <example-component></example-component>
+            <password-input></password-input>
         </div>
         <script src="/js/app.js"> </script>
     </body>
