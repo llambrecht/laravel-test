@@ -11,8 +11,8 @@
 
     </head>
     <body class="antialiased">
-        <div id="app">
-            <password-input></password-input>
+        <div id="app" class="h-screen w-full flex justify-center items-center">
+            <comment-form class="w-1/2" :data-comments="{{ $comments }}"></comment-form>
         </div>
         <script src="/js/app.js"> </script>
     </body>
