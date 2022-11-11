@@ -5320,12 +5320,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      show: false,
-      password: "text"
+      show: false
     };
   }
 });
@@ -27866,7 +27868,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nTypeError: Cannot read properties of undefined (reading 'config')\n    at getTailwindConfig (C:\\xampp\\htdocs\\laravel-test\\node_modules\\tailwindcss\\lib\\lib\\setupTrackingContext.js:84:63)\n    at C:\\xampp\\htdocs\\laravel-test\\node_modules\\tailwindcss\\lib\\lib\\setupTrackingContext.js:96:92\n    at C:\\xampp\\htdocs\\laravel-test\\node_modules\\tailwindcss\\lib\\processTailwindFeatures.js:46:11\n    at plugins (C:\\xampp\\htdocs\\laravel-test\\node_modules\\tailwindcss\\lib\\index.js:38:63)\n    at LazyResult.runOnRoot (C:\\xampp\\htdocs\\laravel-test\\node_modules\\postcss\\lib\\lazy-result.js:339:16)\n    at LazyResult.runAsync (C:\\xampp\\htdocs\\laravel-test\\node_modules\\postcss\\lib\\lazy-result.js:393:26)\n    at LazyResult.async (C:\\xampp\\htdocs\\laravel-test\\node_modules\\postcss\\lib\\lazy-result.js:221:30)\n    at LazyResult.then (C:\\xampp\\htdocs\\laravel-test\\node_modules\\postcss\\lib\\lazy-result.js:206:17)\n    at processResult (C:\\xampp\\htdocs\\laravel-test\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\xampp\\htdocs\\laravel-test\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\xampp\\htdocs\\laravel-test\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\xampp\\htdocs\\laravel-test\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\xampp\\htdocs\\laravel-test\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\xampp\\htdocs\\laravel-test\\node_modules\\postcss-loader\\dist\\index.js:142:7)");
 
@@ -28154,119 +28156,78 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    (_vm.show ? "text" : "password") === "checkbox"
-      ? _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.password,
-              expression: "password",
-            },
-          ],
-          attrs: { type: "checkbox" },
-          domProps: {
-            checked: Array.isArray(_vm.password)
-              ? _vm._i(_vm.password, null) > -1
-              : _vm.password,
-          },
-          on: {
-            change: function ($event) {
-              var $$a = _vm.password,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = null,
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.password = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.password = $$a
-                      .slice(0, $$i)
-                      .concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.password = $$c
-              }
-            },
-          },
-        })
-      : (_vm.show ? "text" : "password") === "radio"
-      ? _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.password,
-              expression: "password",
-            },
-          ],
-          attrs: { type: "radio" },
-          domProps: { checked: _vm._q(_vm.password, null) },
-          on: {
-            change: function ($event) {
-              _vm.password = null
-            },
-          },
-        })
-      : _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.password,
-              expression: "password",
-            },
-          ],
-          attrs: { type: _vm.show ? "text" : "password" },
-          domProps: { value: _vm.password },
-          on: {
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.password = $event.target.value
-            },
-          },
-        }),
-    _vm._v(" "),
+  return _c("div", { staticClass: "flex" }, [
     _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.show,
-          expression: "show",
-        },
-      ],
-      attrs: { type: "checkbox" },
-      domProps: {
-        checked: Array.isArray(_vm.show)
-          ? _vm._i(_vm.show, null) > -1
-          : _vm.show,
-      },
-      on: {
-        change: function ($event) {
-          var $$a = _vm.show,
-            $$el = $event.target,
-            $$c = $$el.checked ? true : false
-          if (Array.isArray($$a)) {
-            var $$v = null,
-              $$i = _vm._i($$a, $$v)
-            if ($$el.checked) {
-              $$i < 0 && (_vm.show = $$a.concat([$$v]))
-            } else {
-              $$i > -1 &&
-                (_vm.show = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-            }
-          } else {
-            _vm.show = $$c
-          }
-        },
-      },
+      staticClass: "border rounded-1 px-2 h-8",
+      attrs: { type: _vm.show ? "text" : "password" },
     }),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass:
+          "border-r border-t border-b rounded-r px-2 h-8 flex justify-center items-center",
+        attrs: { type: "button" },
+        on: {
+          click: function ($event) {
+            _vm.show = !_vm.show
+          },
+        },
+      },
+      [
+        _c(
+          "svg",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.show,
+                expression: "show",
+              },
+            ],
+            staticClass: "h-3 w-3 fill-current text-grey-darker",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 20 20",
+            },
+          },
+          [
+            _c("path", {
+              attrs: {
+                d: "M12.81 4.36l-1.77 1.78a4 4 0 0 0-4.9 4.9l-2.76 2.75C2.06 12.79.96 11.49.2 10a11 11 0 0 1 12.6-5.64zm3.8 1.85c1.33 1 2.43 2.3 3.2 3.79a11 11 0 0 1-12.62 5.64l1.77-1.78a4 4 0 0 0 4.9-4.9l2.76-2.75zm-.25-3.99l1.42 1.42L3.64 17.78l-1.42-1.42L16.36 2.22z",
+              },
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "svg",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.show,
+                expression: "! show",
+              },
+            ],
+            staticClass: "h-3 w-3 fill-current text-grey-darker",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 20 20",
+            },
+          },
+          [
+            _c("path", {
+              attrs: {
+                d: "M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z",
+              },
+            }),
+          ]
+        ),
+      ]
+    ),
   ])
 }
 var staticRenderFns = []
@@ -40423,9 +40384,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__("./resources/js/app.js");
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;

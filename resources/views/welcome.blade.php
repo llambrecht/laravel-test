@@ -7,7 +7,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     </head>
     <body class="antialiased">
@@ -17,3 +17,4 @@
         <script src="/js/app.js"> </script>
     </body>
 </html>
+
